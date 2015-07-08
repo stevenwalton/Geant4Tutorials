@@ -1,0 +1,18 @@
+/* Apparently we need this file, there might be a way to get around it */
+#ifndef ActionInitialization_h
+#define ActionInitialization_h 1
+
+#include "G4VUserActionInitialization.hh"
+
+/// Action Initialization class
+
+class ActionInitialization : public G4VUserActionInitialization
+{
+  public:
+    ActionInitialization();
+    virtual ~ActionInitialization();
+
+    virtual void Build() const;
+};
+
+#endif

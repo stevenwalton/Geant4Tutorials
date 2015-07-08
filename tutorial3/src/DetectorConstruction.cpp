@@ -1,0 +1,103 @@
+/******* We will create the most basics of a detector construction file  ********/
+/*** 
+ * To do this we will create a world box and place another box inside it and fill it. We need 
+ * to create the logical volume, use the solid, and add other attributes (like composition)
+ * ***/
+
+#include "DetectorConstruction.hh"
+#include "G4NistManager.hh"
+#include "G4Box.hh"
+#include "G4LogicalVolume.hh"
+#include "G4PVPlacement.hh"
+#include "G4RotationMatrix.hh"
+#include "G4Transform3D.hh"
+#include "G4PhysicalConstants.hh"
+#include "G4SystemOfUnits.hh"
+
+DetectorConstruction::DetectorConstruction()
+  : G4VUserDetectorConstruction()
+{
+  DefineMaterials();
+}
+
+// Create virtual
+DetectorConstruction::~DetectorConstruction()
+{}  // C++ only reads one line below if no curly braces are defined, but lets keep good habits
+
+void DetectorConstruction::DefineMaterials()
+{
+  G4NistManager* man = G4NistManager::Instance();
+  G4bool isotopes = false;
+  /**
+   * G4Element class has properties: Atomic number, number of nucleons, atomic mass, shell energy, cross section per atom, etc 
+   * G4Material has macroscopic properties: density, state, temperature, pressure, radiation length, mean free path, dE/dx, etc
+   */
+  
+  /* Define simple material */
+  // G4double density = 1.390 * g/cm3;
+  // G4double a = 39.95 * g/mole;
+  // G4Material* lAr = new G4Material("liquidArgon", // Name
+  //                                   18.,          // Z value
+  //                                   a,            // atomic mass
+  //                                   density);     // That thing
+  // 
+  /* Define a simple molecule */
+  G4Element* H = man -> FindOrBuildElement("H", isotopes); // another way of adding elements, also this gives concentrations akin to real life
+  G4Element* O = man -> FindOrBuildElement("O", isotopes);
+  
+  G4Material* H2O = new G4Material("Water",         // name
+                                    1.000 * g/cm3,  // density
+                                    2);             // number of components
+  H2O -> AddElement(H, 2);  // Name and number of atoms in molecule
+  H2O -> AddElement(O, 1);
+  
+  /* Define mixture by fractional mass */
+  G4Element* N = man -> FindOrBuildElement("N", isotopes);
+  G4double density = 1.290 * mg/cm3;
+  G4Material* Air = new G4Material("Air", density, 2);
+  Air -> AddElement(N, 70*perCent);
+  Air -> AddElement(O, 30*perCent);
+}
+
+
+
+G4VPhysicalVolume* DetectorConstruction::Construct()
+{
+  
+  G4NistManager* nist = G4NistManager::Instance();
+  G4Material* default_mat = nist -> FindOrBuildMaterial("Air");
+  G4Material* box_mat = nist -> FindOrBuildMaterial("Water");
+
+  /*** FIRST create the WORLD ***/
+  G4double worldSize = 1 * m;
+  G4Box* solidWorld = new G4Box("World", worldSize, worldSize, worldSize);
+  G4LogicalVolume* logicWorld = new G4LogicalVolume(solidWorld, default_mat, "World");
+  G4VPhysicalVolume* physWorld = new G4PVPlacement(0, G4ThreeVector(), logicWorld, "World", 0, false, 0);
+
+  /* to create a solid box we do the following */
+  G4double Box_x = 0.5*m;   // Note that these are HALF LENGTHS
+  G4double Box_y = 0.5*m;
+  G4double Box_z = 0.5*m;   // creates a 1x1x1 m box, from -0.5 to 0.5 on each side of the axies 
+  
+  G4Box* testBox = new G4Box("testBox", // Name
+                          Box_x,    // x length
+                          Box_y,    // y length
+                          Box_z);   // z length
+  
+  /** Create a logical volume **/
+  G4LogicalVolume* testBox_log = new G4LogicalVolume(testBox,         // Its solid (see the box we made)
+                                                      box_mat,        // Its material 
+                                                      "testBox");  // Its name
+  
+  /** Create the Physical Volume **/
+  /** Physical volume is a placed instance of the logical volume. We'll place it in its mother logical volume **/
+  G4VPhysicalVolume* testBox_phy = new G4PVPlacement(0,                 // Rotation
+                                                     G4ThreeVector(),   // its location
+                                                     testBox_log,       // the logical volume
+                                                     "testBox",            // its name
+                                                     logicWorld,        // its mother volume 
+                                                     false,             // boolean operations
+                                                     0);                // its copy number
+  
+  return physWorld; // Always return the world 
+}
