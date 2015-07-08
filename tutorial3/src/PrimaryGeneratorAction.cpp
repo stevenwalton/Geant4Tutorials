@@ -8,7 +8,8 @@
 #include "G4ParticleGun.hh"
 #include "G4ThreeVector.hh"
 //#include "G4Geantino.hh"
-#include "G4Neutron.hh"
+#include "G4ParticleTable.hh"
+#include "G4ParticleDefinition.hh"
 #include "globals.hh"
 #include "G4SystemOfUnits.hh"
 
@@ -18,8 +19,12 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   G4int n_particle = 1;   // Number of particles fired per beamOn run
   particleGun = new G4ParticleGun(n_particle);  // creation of particle gun
 
-  particleGun -> SetParticleDefinition(G4Neutron::NeutronDefinition()); // Use Geantino as firing particle
-  particleGun -> SetParticleEnergy(1.0 * MeV);  // 1GeV energy of gun
+  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+  G4String particleName;
+  G4ParticleDefinition* particle = particleTable -> FindParticle(particleName="gamma");
+  particleGun -> SetParticleDefinition(particle); // Use Geantino as firing particle
+  particleGun -> SetParticleMomentumDirection(G4ThreeVector(1., 0., 0.));
+  particleGun -> SetParticleEnergy(6.0 * MeV);  // 1GeV energy of gun
   particleGun -> SetParticlePosition(G4ThreeVector(-1.*m, 0.*m, 0.*m));   // Set gun to be at furthest x in world (far left to standard orientation)
 }
 

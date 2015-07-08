@@ -34,13 +34,13 @@ void DetectorConstruction::DefineMaterials()
    */
   
   /* Define simple material */
-  // G4double density = 1.390 * g/cm3;
-  // G4double a = 39.95 * g/mole;
-  // G4Material* lAr = new G4Material("liquidArgon", // Name
-  //                                   18.,          // Z value
-  //                                   a,            // atomic mass
-  //                                   density);     // That thing
-  // 
+  G4double density = 1.390 * g/cm3;
+  G4double a = 39.95 * g/mole;
+  G4Material* lAr = new G4Material("liquidArgon", // Name
+                                    18.,          // Z value
+                                    a,            // atomic mass
+                                    density);     // That thing
+  
   /* Define a simple molecule */
   G4Element* H = man -> FindOrBuildElement("H", isotopes); // another way of adding elements, also this gives concentrations akin to real life
   G4Element* O = man -> FindOrBuildElement("O", isotopes);
@@ -53,7 +53,7 @@ void DetectorConstruction::DefineMaterials()
   
   /* Define mixture by fractional mass */
   G4Element* N = man -> FindOrBuildElement("N", isotopes);
-  G4double density = 1.290 * mg/cm3;
+  density = 1.290 * mg/cm3;
   G4Material* Air = new G4Material("Air", density, 2);
   Air -> AddElement(N, 70*perCent);
   Air -> AddElement(O, 30*perCent);
@@ -66,7 +66,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   
   G4NistManager* nist = G4NistManager::Instance();
   G4Material* default_mat = nist -> FindOrBuildMaterial("Air");
-  G4Material* box_mat = nist -> FindOrBuildMaterial("Water");
+  G4Material* box_mat = nist -> FindOrBuildMaterial("liquidArgon");
 
   /*** FIRST create the WORLD ***/
   G4double worldSize = 1 * m;
@@ -91,13 +91,16 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   
   /** Create the Physical Volume **/
   /** Physical volume is a placed instance of the logical volume. We'll place it in its mother logical volume **/
-  G4VPhysicalVolume* testBox_phy = new G4PVPlacement(0,                 // Rotation
+                                  // We can place this as part of the G4Logical Volume
+                                 new G4PVPlacement(0,                 // Rotation
                                                      G4ThreeVector(),   // its location
                                                      testBox_log,       // the logical volume
                                                      "testBox",            // its name
                                                      logicWorld,        // its mother volume 
                                                      false,             // boolean operations
                                                      0);                // its copy number
-  
+
+  // Visualization Attributes
+  G4cout << "Hello! " << G4endl;  
   return physWorld; // Always return the world 
 }

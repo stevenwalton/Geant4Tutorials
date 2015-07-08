@@ -6,6 +6,7 @@
 #include "DetectorConstruction.hh"
 #include "PhysicsList.hh"
 #include "PrimaryGeneratorAction.hh"
+#include "G4ParticleTable.hh"
 
 // add "int argc, char** argv" to int main if you'd like to run arguments
 int main(int argc, char** argv)
@@ -41,6 +42,9 @@ int main(int argc, char** argv)
   // TERMINATE job
   delete runManager;
   delete visManager; 
+
+  // This will output the materials defined in DetectorConstruction when exiting the program
+  G4cout << *(G4Material::GetMaterialTable()) << G4endl;
   return 0;
 }
 
