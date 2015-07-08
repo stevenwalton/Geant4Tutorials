@@ -21,6 +21,12 @@ We go through (almost) the MOST basic example I can think of making. The files w
 - PrimaryGeneratorAction
 - CMakeLists.txt
 
-The geant files I will have a src folder for the *.cpp files and an include file for the *.hh files. You can combine the cpp and hh files if you want, but I suggest keeping organized. 
+Note that these files are MANDATORY! You can combine all the c++ files together, but it is not suggested, stay organized.
 
 In our DetectorConstruction file you will see how we define materials (multiple ways), and create a world box as well as a small physical box inside. We are filling the entire world with Air and the box with water.
+
+Tips for playing around
+-------------
+Remember that cout and endl in geant are G4cout and G4endl. 
+- Try to figure out how to print the materials table. 
+- Why did I comment out the liquid Argon? Is it a problem if you don't?
