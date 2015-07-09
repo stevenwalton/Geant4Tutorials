@@ -67,6 +67,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   G4NistManager* nist = G4NistManager::Instance();
   G4Material* default_mat = nist -> FindOrBuildMaterial("Air");
   G4Material* box_mat = nist -> FindOrBuildMaterial("liquidArgon");
+  G4Material* water = nist -> FindOrBuildMaterial("G4_Water");
 
   /*** FIRST create the WORLD ***/
   G4double worldSize = 1 * m;
@@ -100,7 +101,32 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
                                                      false,             // boolean operations
                                                      0);                // its copy number
 
-  // Visualization Attributes
-  G4cout << "Hello! " << G4endl;  
+
+  G4Box* plate = new G4Box("plate",
+                              1.* m,
+                              1.* m,
+                              0.1 * m,);
+
+  G4LogicalVolume* plate_log = new G4LogicalVolume(plate,
+                                                   water,
+                                                   "plate");
+                                  new G4PVPlacement(0,
+                                                    G4ThreeVector(),
+                                                    plate_log,
+                                                    "plate",
+                                                    logicWorld,
+                                                    false,
+                                                    0);
+
+  G4MultiFunctionalDetector* plate = new G4MultiFunctionalDetector("plate");
+  G4VPrimitiveScorer* prim = new G4PSDoseDeposit("dose");
+  plate -> RegisterPrimitive(prim);
+  SetSensitiveDetector("plate_log", plate);
+
+    
   return physWorld; // Always return the world 
 }
+
+void DetectorConstruction::ConstructSDandField()
+{
+
