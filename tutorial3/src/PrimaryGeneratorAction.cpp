@@ -4,17 +4,20 @@
  */
 
 #include "PrimaryGeneratorAction.hh"
+#include "G4RunManager.hh"
 #include "G4Event.hh"
 #include "G4ParticleGun.hh"
 #include "G4ThreeVector.hh"
-//#include "G4Geantino.hh"
 #include "G4ParticleTable.hh"
 #include "G4ParticleDefinition.hh"
+#include "G4IonTable.hh"
 #include "globals.hh"
 #include "G4SystemOfUnits.hh"
 
 /* We'll use the Geantino (non-interacting particle) for the gun, can be changed. */
 PrimaryGeneratorAction::PrimaryGeneratorAction()
+  : G4VUserPrimaryGeneratorAction(),
+    particleGun(0)
 {
   G4int n_particle = 1;   // Number of particles fired per beamOn run
   particleGun = new G4ParticleGun(n_particle);  // creation of particle gun

@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/ActionInitialization.hh
+G4VUserActionInitialization.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/G4VUserActionInitialization.hh
+
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/DetectorConstruction.hh
 G4VUserDetectorConstruction.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/G4VUserDetectorConstruction.hh
@@ -19,6 +23,34 @@ G4VModularPhysicsList.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/PrimaryGeneratorAction.hh
 G4VUserPrimaryGeneratorAction.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/G4VUserPrimaryGeneratorAction.hh
+
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/Run.hh
+G4Run.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/G4Run.hh
+globals.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/globals.hh
+
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/RunAction.hh
+G4UserRunAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/G4UserRunAction.hh
+globals.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/globals.hh
+
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/StackingAction.hh
+G4UserStackingAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/G4UserStackingAction.hh
+globals.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/include/globals.hh
+
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/ActionInitialization.cpp
+ActionInitialization.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/ActionInitialization.hh
+PrimaryGeneratorAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/PrimaryGeneratorAction.hh
+RunAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/RunAction.hh
+StackingAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/StackingAction.hh
 
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/DetectorConstruction.cpp
 DetectorConstruction.hh
@@ -39,6 +71,16 @@ G4PhysicalConstants.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4PhysicalConstants.hh
 G4SystemOfUnits.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4SystemOfUnits.hh
+G4SDManager.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4SDManager.hh
+G4MultiFunctionalDetector.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4MultiFunctionalDetector.hh
+G4VPrimitiveScorer.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4VPrimitiveScorer.hh
+G4PSEnergyDeposit.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4PSEnergyDeposit.hh
+G4PSDoseDeposit.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4PSDoseDeposit.hh
 
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/PhysicsList.cpp
 PhysicsList.hh
@@ -53,6 +95,8 @@ G4EmStandardPhysics.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/PrimaryGeneratorAction.cpp
 PrimaryGeneratorAction.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/PrimaryGeneratorAction.hh
+G4RunManager.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4RunManager.hh
 G4Event.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4Event.hh
 G4ParticleGun.hh
@@ -63,10 +107,58 @@ G4ParticleTable.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4ParticleTable.hh
 G4ParticleDefinition.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4ParticleDefinition.hh
+G4IonTable.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4IonTable.hh
 globals.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/globals.hh
 G4SystemOfUnits.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4SystemOfUnits.hh
+
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/Run.cpp
+Run.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/Run.hh
+G4RunManager.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4RunManager.hh
+G4Event.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4Event.hh
+G4SDManager.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4SDManager.hh
+G4HCofThisEvent.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4HCofThisEvent.hh
+G4THitsMap.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4THitsMap.hh
+G4SystemOfUnits.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4SystemOfUnits.hh
+
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/RunAction.cpp
+RunAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/RunAction.hh
+PrimaryGeneratorAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/PrimaryGeneratorAction.hh
+Run.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/Run.hh
+G4Run.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4Run.hh
+G4RunManager.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4RunManager.hh
+G4UnitsTable.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4UnitsTable.hh
+G4SystemOfUnits.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4SystemOfUnits.hh
+G4ParticleDefinition.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4ParticleDefinition.hh
+G4ParticleTable.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4ParticleTable.hh
+G4ParticleGun.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4ParticleGun.hh
+
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/StackingAction.cpp
+StackingAction.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/StackingAction.hh
+G4Track.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4Track.hh
+G4NeutrinoE.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/G4NeutrinoE.hh
 
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/tutorial3.cpp
 G4RunManager.hh
@@ -81,10 +173,8 @@ DetectorConstruction.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/DetectorConstruction.hh
 PhysicsList.hh
 /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/PhysicsList.hh
-PrimaryGeneratorAction.hh
-/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/PrimaryGeneratorAction.hh
-G4ParticleTable.hh
-/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/G4ParticleTable.hh
+ActionInitialization.hh
+/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/ActionInitialization.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
 iosfwd
@@ -620,6 +710,12 @@ G4VSolid.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ClassificationOfNewTrack.hh
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4CollectionNameVector.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+vector
+-
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Color.hh
 G4Colour.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Colour.hh
@@ -872,6 +968,12 @@ G4VHitsCollection.hh
 vector
 -
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4HCtable.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+vector
+-
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4HepRep.hh
 G4VGraphicsSystem.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VGraphicsSystem.hh
@@ -896,6 +998,24 @@ G4VModelFactory.hh
 G4VHit.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VHit.hh
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4IonTable.hh
+G4ios.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ios.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+G4ParticleDefinition.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ParticleDefinition.hh
+G4ParticleTable.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ParticleTable.hh
+G4Ions.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Ions.hh
+cmath
+-
+vector
+-
+map
+-
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4IonisParamElm.hh
 G4ios.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ios.hh
@@ -907,6 +1027,14 @@ G4ios.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ios.hh
 globals.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Ions.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+G4ios.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ios.hh
+G4ParticleDefinition.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ParticleDefinition.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Isotope.hh
 globals.hh
@@ -1034,6 +1162,24 @@ G4ModelingParameters.icc
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ModelingParameters.icc
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4MultiFunctionalDetector.hh
+G4VSensitiveDetector.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSensitiveDetector.hh
+G4VHit.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VHit.hh
+G4Step.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Step.hh
+G4HCofThisEvent.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4HCofThisEvent.hh
+G4VReadOutGeometry.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VReadOutGeometry.hh
+G4TouchableHistory.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4TouchableHistory.hh
+G4CollectionNameVector.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4CollectionNameVector.hh
+vector
+-
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4NavigationHistory.hh
 assert.h
 -
@@ -1150,6 +1296,14 @@ G4Navigator.icc
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Navigator.icc
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4NeutrinoE.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+G4ios.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ios.hh
+G4ParticleDefinition.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ParticleDefinition.hh
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4NistElementBuilder.hh
 vector
 -
@@ -1239,6 +1393,18 @@ pwdefs.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/pwdefs.hh
 G4AutoLock.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4AutoLock.hh
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4PSDoseDeposit.hh
+G4VPrimitiveScorer.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VPrimitiveScorer.hh
+G4THitsMap.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4THitsMap.hh
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4PSEnergyDeposit.hh
+G4VPrimitiveScorer.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VPrimitiveScorer.hh
+G4THitsMap.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4THitsMap.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4PVPlacement.hh
 G4VPhysicalVolume.hh
@@ -1648,6 +1814,12 @@ G4ThreeVector.hh
 CLHEP/Vector/Rotation.h
 -
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Run.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+vector
+-
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4RunManager.hh
 G4RunManagerKernel.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4RunManagerKernel.hh
@@ -1667,6 +1839,22 @@ globals.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
 G4EventManager.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4EventManager.hh
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4SDManager.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+G4SDStructure.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4SDStructure.hh
+G4HCtable.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4HCtable.hh
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4SDStructure.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+G4VSensitiveDetector.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSensitiveDetector.hh
+vector
+-
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4SandiaTable.hh
 assert.h
@@ -1711,6 +1899,14 @@ G4Scene.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Scene.hh
 vector
 -
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4SensitiveVolumeList.hh
+vector
+-
+G4LogicalVolume.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4LogicalVolume.hh
+G4VPhysicalVolume.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VPhysicalVolume.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4SmartTrackStack.hh
 G4StackedTrack.hh
@@ -2160,6 +2356,22 @@ G4VSolid.hh
 VUSolid.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/VUSolid.hh
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4UnitsTable.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+vector
+-
+G4ThreeVector.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ThreeVector.hh
+G4UnitsTable.icc
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4UnitsTable.icc
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4UnitsTable.icc
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4UserRunAction.hh
+G4Types.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Types.hh
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4UserStackingAction.hh
 G4ClassificationOfNewTrack.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ClassificationOfNewTrack.hh
@@ -2332,6 +2544,14 @@ G4VUPLSplitter.hh
 G4ThreeVector.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ThreeVector.hh
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VPrimitiveScorer.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
+G4VSDFilter.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSDFilter.hh
+G4MultiFunctionalDetector.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4MultiFunctionalDetector.hh
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VProcess.hh
 globals.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
@@ -2362,6 +2582,14 @@ G4VGraphicsSystem.hh
 G4VGraphicsSystem.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VGraphicsSystem.hh
 
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VReadOutGeometry.hh
+G4SensitiveVolumeList.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4SensitiveVolumeList.hh
+G4Step.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Step.hh
+G4TouchableHistory.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4TouchableHistory.hh
+
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VRestDiscreteProcess.hh
 globals.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
@@ -2369,6 +2597,10 @@ G4ios.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4ios.hh
 G4VProcess.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VProcess.hh
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSDFilter.hh
+globals.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/globals.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSceneHandler.hh
 globals.hh
@@ -2385,6 +2617,22 @@ G4VSceneHandler.icc
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSceneHandler.icc
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSceneHandler.icc
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSensitiveDetector.hh
+G4VHit.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VHit.hh
+G4Step.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4Step.hh
+G4HCofThisEvent.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4HCofThisEvent.hh
+G4VReadOutGeometry.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VReadOutGeometry.hh
+G4TouchableHistory.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4TouchableHistory.hh
+G4CollectionNameVector.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4CollectionNameVector.hh
+G4VSDFilter.hh
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSDFilter.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VSolid.hh
 G4Types.hh
@@ -2471,6 +2719,8 @@ rundefs.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/rundefs.hh
 G4AutoLock.hh
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4AutoLock.hh
+
+/home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VUserActionInitialization.hh
 
 /home/steven/GEANT4/geant4.10.1-install/include/Geant4/G4VUserDetectorConstruction.hh
 vector

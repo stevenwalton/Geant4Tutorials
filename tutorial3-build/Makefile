@@ -167,6 +167,33 @@ tutorial3/fast:
 	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/build
 .PHONY : tutorial3/fast
 
+src/ActionInitialization.o: src/ActionInitialization.cpp.o
+
+.PHONY : src/ActionInitialization.o
+
+# target to build an object file
+src/ActionInitialization.cpp.o:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o
+.PHONY : src/ActionInitialization.cpp.o
+
+src/ActionInitialization.i: src/ActionInitialization.cpp.i
+
+.PHONY : src/ActionInitialization.i
+
+# target to preprocess a source file
+src/ActionInitialization.cpp.i:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.i
+.PHONY : src/ActionInitialization.cpp.i
+
+src/ActionInitialization.s: src/ActionInitialization.cpp.s
+
+.PHONY : src/ActionInitialization.s
+
+# target to generate assembly for a file
+src/ActionInitialization.cpp.s:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.s
+.PHONY : src/ActionInitialization.cpp.s
+
 src/DetectorConstruction.o: src/DetectorConstruction.cpp.o
 
 .PHONY : src/DetectorConstruction.o
@@ -248,6 +275,87 @@ src/PrimaryGeneratorAction.cpp.s:
 	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/PrimaryGeneratorAction.cpp.s
 .PHONY : src/PrimaryGeneratorAction.cpp.s
 
+src/Run.o: src/Run.cpp.o
+
+.PHONY : src/Run.o
+
+# target to build an object file
+src/Run.cpp.o:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/Run.cpp.o
+.PHONY : src/Run.cpp.o
+
+src/Run.i: src/Run.cpp.i
+
+.PHONY : src/Run.i
+
+# target to preprocess a source file
+src/Run.cpp.i:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/Run.cpp.i
+.PHONY : src/Run.cpp.i
+
+src/Run.s: src/Run.cpp.s
+
+.PHONY : src/Run.s
+
+# target to generate assembly for a file
+src/Run.cpp.s:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/Run.cpp.s
+.PHONY : src/Run.cpp.s
+
+src/RunAction.o: src/RunAction.cpp.o
+
+.PHONY : src/RunAction.o
+
+# target to build an object file
+src/RunAction.cpp.o:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/RunAction.cpp.o
+.PHONY : src/RunAction.cpp.o
+
+src/RunAction.i: src/RunAction.cpp.i
+
+.PHONY : src/RunAction.i
+
+# target to preprocess a source file
+src/RunAction.cpp.i:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/RunAction.cpp.i
+.PHONY : src/RunAction.cpp.i
+
+src/RunAction.s: src/RunAction.cpp.s
+
+.PHONY : src/RunAction.s
+
+# target to generate assembly for a file
+src/RunAction.cpp.s:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/RunAction.cpp.s
+.PHONY : src/RunAction.cpp.s
+
+src/StackingAction.o: src/StackingAction.cpp.o
+
+.PHONY : src/StackingAction.o
+
+# target to build an object file
+src/StackingAction.cpp.o:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o
+.PHONY : src/StackingAction.cpp.o
+
+src/StackingAction.i: src/StackingAction.cpp.i
+
+.PHONY : src/StackingAction.i
+
+# target to preprocess a source file
+src/StackingAction.cpp.i:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/StackingAction.cpp.i
+.PHONY : src/StackingAction.cpp.i
+
+src/StackingAction.s: src/StackingAction.cpp.s
+
+.PHONY : src/StackingAction.s
+
+# target to generate assembly for a file
+src/StackingAction.cpp.s:
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/StackingAction.cpp.s
+.PHONY : src/StackingAction.cpp.s
+
 tutorial3.o: tutorial3.cpp.o
 
 .PHONY : tutorial3.o
@@ -288,6 +396,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... tutorial3"
 	@echo "... install/local"
+	@echo "... src/ActionInitialization.o"
+	@echo "... src/ActionInitialization.i"
+	@echo "... src/ActionInitialization.s"
 	@echo "... src/DetectorConstruction.o"
 	@echo "... src/DetectorConstruction.i"
 	@echo "... src/DetectorConstruction.s"
@@ -297,6 +408,15 @@ help:
 	@echo "... src/PrimaryGeneratorAction.o"
 	@echo "... src/PrimaryGeneratorAction.i"
 	@echo "... src/PrimaryGeneratorAction.s"
+	@echo "... src/Run.o"
+	@echo "... src/Run.i"
+	@echo "... src/Run.s"
+	@echo "... src/RunAction.o"
+	@echo "... src/RunAction.i"
+	@echo "... src/RunAction.s"
+	@echo "... src/StackingAction.o"
+	@echo "... src/StackingAction.i"
+	@echo "... src/StackingAction.s"
 	@echo "... tutorial3.o"
 	@echo "... tutorial3.i"
 	@echo "... tutorial3.s"

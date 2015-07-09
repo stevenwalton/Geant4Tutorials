@@ -14,7 +14,9 @@
 /vis/drawVolume
 
 # Specify viewing angle
-/vis/viewer/set/viewpointThetaPhi 20. 20.
+/vis/viewer/set/viewpointThetaPhi 0. 0.
+# We're going to draw axes
+/vis/scene/add/axes 
 
 # Make smooth trajectories at end of event, trajectory points as markers 2px wide
 /vis/scene/add/trajectories smooth

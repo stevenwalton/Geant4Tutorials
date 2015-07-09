@@ -5,8 +5,8 @@
 #include "G4UIExecutive.hh"
 #include "DetectorConstruction.hh"
 #include "PhysicsList.hh"
-#include "PrimaryGeneratorAction.hh"
-#include "G4ParticleTable.hh"
+//#include "PrimaryGeneratorAction.hh"
+#include "ActionInitialization.hh"
 
 // add "int argc, char** argv" to int main if you'd like to run arguments
 int main(int argc, char** argv)
@@ -24,11 +24,11 @@ int main(int argc, char** argv)
   runManager -> SetUserInitialization(new DetectorConstruction);
   runManager -> SetUserInitialization(new PhysicsList);
 
-  // Set MANDATORY user action class
-  runManager -> SetUserAction(new PrimaryGeneratorAction);
+  // Set MANDATORY user action class (Here we have AI call PGE)
+  runManager -> SetUserInitialization(new ActionInitialization());
 
   // Run the kernel
-  runManager -> Initialize();
+  //runManager -> Initialize();
   
   // get pointer to UI manager and set verbosities
   G4UImanager* UI = G4UImanager::GetUIpointer();
@@ -36,8 +36,8 @@ int main(int argc, char** argv)
   ui -> SessionStart();
   delete ui;
   // start a run
-  int numberOfEvents = 3;
-  runManager -> BeamOn(numberOfEvents);
+  //int numberOfEvents = 3;
+  //runManager -> BeamOn(numberOfEvents);
 
   // TERMINATE job
   delete runManager;

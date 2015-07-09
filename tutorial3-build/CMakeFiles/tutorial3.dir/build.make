@@ -105,9 +105,33 @@ CMakeFiles/tutorial3.dir/src/PrimaryGeneratorAction.cpp.o.provides: CMakeFiles/t
 CMakeFiles/tutorial3.dir/src/PrimaryGeneratorAction.cpp.o.provides.build: CMakeFiles/tutorial3.dir/src/PrimaryGeneratorAction.cpp.o
 
 
+CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o: CMakeFiles/tutorial3.dir/flags.make
+CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o: /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/StackingAction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o -c /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/StackingAction.cpp
+
+CMakeFiles/tutorial3.dir/src/StackingAction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tutorial3.dir/src/StackingAction.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/StackingAction.cpp > CMakeFiles/tutorial3.dir/src/StackingAction.cpp.i
+
+CMakeFiles/tutorial3.dir/src/StackingAction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tutorial3.dir/src/StackingAction.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/StackingAction.cpp -o CMakeFiles/tutorial3.dir/src/StackingAction.cpp.s
+
+CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.requires:
+
+.PHONY : CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.requires
+
+CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.provides: CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.requires
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.provides.build
+.PHONY : CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.provides
+
+CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.provides.build: CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o
+
+
 CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o: CMakeFiles/tutorial3.dir/flags.make
 CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o: /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/PhysicsList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o -c /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/PhysicsList.cpp
 
 CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.i: cmake_force
@@ -129,9 +153,57 @@ CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o.provides: CMakeFiles/tutorial3.di
 CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o.provides.build: CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o
 
 
+CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o: CMakeFiles/tutorial3.dir/flags.make
+CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o: /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/ActionInitialization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o -c /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/ActionInitialization.cpp
+
+CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/ActionInitialization.cpp > CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.i
+
+CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/ActionInitialization.cpp -o CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.s
+
+CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.requires:
+
+.PHONY : CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.requires
+
+CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.provides: CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.requires
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.provides.build
+.PHONY : CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.provides
+
+CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.provides.build: CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o
+
+
+CMakeFiles/tutorial3.dir/src/RunAction.cpp.o: CMakeFiles/tutorial3.dir/flags.make
+CMakeFiles/tutorial3.dir/src/RunAction.cpp.o: /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/RunAction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tutorial3.dir/src/RunAction.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tutorial3.dir/src/RunAction.cpp.o -c /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/RunAction.cpp
+
+CMakeFiles/tutorial3.dir/src/RunAction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tutorial3.dir/src/RunAction.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/RunAction.cpp > CMakeFiles/tutorial3.dir/src/RunAction.cpp.i
+
+CMakeFiles/tutorial3.dir/src/RunAction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tutorial3.dir/src/RunAction.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/RunAction.cpp -o CMakeFiles/tutorial3.dir/src/RunAction.cpp.s
+
+CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.requires:
+
+.PHONY : CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.requires
+
+CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.provides: CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.requires
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.provides.build
+.PHONY : CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.provides
+
+CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.provides.build: CMakeFiles/tutorial3.dir/src/RunAction.cpp.o
+
+
 CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o: CMakeFiles/tutorial3.dir/flags.make
 CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o: /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/DetectorConstruction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o -c /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/DetectorConstruction.cpp
 
 CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.i: cmake_force
@@ -153,20 +225,52 @@ CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o.provides: CMakeFiles/tut
 CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o.provides.build: CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o
 
 
+CMakeFiles/tutorial3.dir/src/Run.cpp.o: CMakeFiles/tutorial3.dir/flags.make
+CMakeFiles/tutorial3.dir/src/Run.cpp.o: /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/Run.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/tutorial3.dir/src/Run.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tutorial3.dir/src/Run.cpp.o -c /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/Run.cpp
+
+CMakeFiles/tutorial3.dir/src/Run.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tutorial3.dir/src/Run.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/Run.cpp > CMakeFiles/tutorial3.dir/src/Run.cpp.i
+
+CMakeFiles/tutorial3.dir/src/Run.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tutorial3.dir/src/Run.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3/src/Run.cpp -o CMakeFiles/tutorial3.dir/src/Run.cpp.s
+
+CMakeFiles/tutorial3.dir/src/Run.cpp.o.requires:
+
+.PHONY : CMakeFiles/tutorial3.dir/src/Run.cpp.o.requires
+
+CMakeFiles/tutorial3.dir/src/Run.cpp.o.provides: CMakeFiles/tutorial3.dir/src/Run.cpp.o.requires
+	$(MAKE) -f CMakeFiles/tutorial3.dir/build.make CMakeFiles/tutorial3.dir/src/Run.cpp.o.provides.build
+.PHONY : CMakeFiles/tutorial3.dir/src/Run.cpp.o.provides
+
+CMakeFiles/tutorial3.dir/src/Run.cpp.o.provides.build: CMakeFiles/tutorial3.dir/src/Run.cpp.o
+
+
 # Object files for target tutorial3
 tutorial3_OBJECTS = \
 "CMakeFiles/tutorial3.dir/tutorial3.cpp.o" \
 "CMakeFiles/tutorial3.dir/src/PrimaryGeneratorAction.cpp.o" \
+"CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o" \
 "CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o" \
-"CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o"
+"CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o" \
+"CMakeFiles/tutorial3.dir/src/RunAction.cpp.o" \
+"CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o" \
+"CMakeFiles/tutorial3.dir/src/Run.cpp.o"
 
 # External object files for target tutorial3
 tutorial3_EXTERNAL_OBJECTS =
 
 tutorial3: CMakeFiles/tutorial3.dir/tutorial3.cpp.o
 tutorial3: CMakeFiles/tutorial3.dir/src/PrimaryGeneratorAction.cpp.o
+tutorial3: CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o
 tutorial3: CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o
+tutorial3: CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o
+tutorial3: CMakeFiles/tutorial3.dir/src/RunAction.cpp.o
 tutorial3: CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o
+tutorial3: CMakeFiles/tutorial3.dir/src/Run.cpp.o
 tutorial3: CMakeFiles/tutorial3.dir/build.make
 tutorial3: /home/steven/GEANT4/geant4.10.1-install/lib/libG4Tree.so
 tutorial3: /home/steven/GEANT4/geant4.10.1-install/lib/libG4GMocren.so
@@ -209,7 +313,7 @@ tutorial3: /home/steven/GEANT4/geant4.10.1-install/lib/libG4intercoms.so
 tutorial3: /home/steven/GEANT4/geant4.10.1-install/lib/libG4global.so
 tutorial3: /home/steven/GEANT4/geant4.10.1-install/lib/libG4clhep.so
 tutorial3: CMakeFiles/tutorial3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable tutorial3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/steven/GEANT4/Builds/Geant4Tutorials/tutorial3-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable tutorial3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tutorial3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -219,8 +323,12 @@ CMakeFiles/tutorial3.dir/build: tutorial3
 
 CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/tutorial3.cpp.o.requires
 CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/src/PrimaryGeneratorAction.cpp.o.requires
+CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/src/StackingAction.cpp.o.requires
 CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/src/PhysicsList.cpp.o.requires
+CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/src/ActionInitialization.cpp.o.requires
+CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/src/RunAction.cpp.o.requires
 CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/src/DetectorConstruction.cpp.o.requires
+CMakeFiles/tutorial3.dir/requires: CMakeFiles/tutorial3.dir/src/Run.cpp.o.requires
 
 .PHONY : CMakeFiles/tutorial3.dir/requires
 

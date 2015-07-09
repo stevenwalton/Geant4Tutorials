@@ -14,6 +14,14 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 
+// New includes
+#include "G4SDManager.hh"
+#include "G4MultiFunctionalDetector.hh"
+#include "G4VPrimitiveScorer.hh"
+#include "G4PSEnergyDeposit.hh"
+#include "G4PSDoseDeposit.hh"
+
+
 DetectorConstruction::DetectorConstruction()
   : G4VUserDetectorConstruction()
 {
@@ -36,7 +44,7 @@ void DetectorConstruction::DefineMaterials()
   /* Define simple material */
   G4double density = 1.390 * g/cm3;
   G4double a = 39.95 * g/mole;
-  G4Material* lAr = new G4Material("liquidArgon", // Name
+  G4Material* lAr = new G4Material("lArgon", // Name
                                     18.,          // Z value
                                     a,            // atomic mass
                                     density);     // That thing
@@ -66,8 +74,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   
   G4NistManager* nist = G4NistManager::Instance();
   G4Material* default_mat = nist -> FindOrBuildMaterial("Air");
-  G4Material* box_mat = nist -> FindOrBuildMaterial("liquidArgon");
-  G4Material* water = nist -> FindOrBuildMaterial("G4_Water");
+  G4Material* box_mat = nist -> FindOrBuildMaterial("lArgon");
+  G4Material* water = nist -> FindOrBuildMaterial("Water");
 
   /*** FIRST create the WORLD ***/
   G4double worldSize = 1 * m;
@@ -87,7 +95,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   
   /** Create a logical volume **/
   G4LogicalVolume* testBox_log = new G4LogicalVolume(testBox,         // Its solid (see the box we made)
-                                                      box_mat,        // Its material 
+                                                      default_mat,        // Its material 
                                                       "testBox");  // Its name
   
   /** Create the Physical Volume **/
@@ -102,31 +110,38 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
                                                      0);                // its copy number
 
 
+  /* We are now going to create a thin plate and have it act as a detector. We'll place it at the edge of the world, opposite of the incoming rays. This means that
+   * it will be located at the lowest value of x in our world. Remember that our particle gun was defined at 1.,0,0
+   * */
   G4Box* plate = new G4Box("plate",
-                              1.* m,
-                              1.* m,
-                              0.1 * m,);
+                              0.1 * m,
+                              1. * m,
+                              1. * m);
 
   G4LogicalVolume* plate_log = new G4LogicalVolume(plate,
                                                    water,
-                                                   "plate");
+                                                   "plateLV");
                                   new G4PVPlacement(0,
-                                                    G4ThreeVector(),
+                                                    G4ThreeVector(0.9 * m,0,0),  // Remember that we have to account for the size of the box
                                                     plate_log,
                                                     "plate",
                                                     logicWorld,
                                                     false,
                                                     0);
 
-  G4MultiFunctionalDetector* plate = new G4MultiFunctionalDetector("plate");
-  G4VPrimitiveScorer* prim = new G4PSDoseDeposit("dose");
-  plate -> RegisterPrimitive(prim);
-  SetSensitiveDetector("plate_log", plate);
-
-    
+      
   return physWorld; // Always return the world 
 }
 
+// We are now going to create the detector here
+// Remember that we will have to edit our .hh file here
 void DetectorConstruction::ConstructSDandField()
 {
+  G4SDManager::GetSDMpointer() -> SetVerboseLevel(1);
+  
+  G4MultiFunctionalDetector* plate = new G4MultiFunctionalDetector("plate");
+  G4VPrimitiveScorer* prim = new G4PSDoseDeposit("dose");   // We want to record the dosage to the patient
+  plate -> RegisterPrimitive(prim);
+  SetSensitiveDetector("plateLV", plate);
+}
 
