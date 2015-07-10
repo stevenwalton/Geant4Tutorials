@@ -19,6 +19,5 @@
 /vis/modeling/trajectories/create/drawByCharge
 /vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
 /vis/scene/notifyHandlers scene-0
-/run/beamOn 1
-/vis/scene/notifyHandlers scene-0
 /run/beamOn 10
+/vis/scene/notifyHandlers scene-0

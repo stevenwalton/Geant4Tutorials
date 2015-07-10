@@ -28,19 +28,3 @@
 /vis/verbose warnings
 /run/beamOn 1
 /vis/scene/notifyHandlers scene-0
-/gun/energy 10 GeV
-/run/beamOn 1
-/gun/particle proton
-/run/beamOn 1
-/gun/energy 100 GeV
-/run/beamOn 1
-/gun/energy 100 TeV
-/run/beamOn 1
-/gun/particle
-/gun/particle help
-/gun/particle N
-/gun/particle gamma
-/run/beamOn 1
-/gun/particle ga
-/gun/particle e+
-/run/beamOn 1

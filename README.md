@@ -1,6 +1,6 @@
 # Geant4Tutorials
 ============================
-Geant4 tutorials made by Steven Walton: walton.stevenj@gmail.com
+Geant4 tutorials made by Steven Walton:
 
 I will be making videos for these at well. 
 We will go through tutorials and build our first Geant4 application, step by step
