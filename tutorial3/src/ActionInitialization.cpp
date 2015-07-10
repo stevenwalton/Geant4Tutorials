@@ -1,3 +1,6 @@
+/* This code will be used to run the Primary Generator Action, Run Action, and Stacking actions. 
+ * This is just for helping with organization
+ */
 #include "ActionInitialization.hh"
 #include "PrimaryGeneratorAction.hh"
 #include "RunAction.hh"

@@ -5,6 +5,8 @@
 /control/saveHistory
 /run/verbose 2
 
+#/run/setCutForAGivenParticle gamma 0.5 m
+#/cuts/setLowEdge 511 keV
 # Initialize kernel
 /run/initialize
 

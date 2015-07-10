@@ -95,7 +95,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   
   /** Create a logical volume **/
   G4LogicalVolume* testBox_log = new G4LogicalVolume(testBox,         // Its solid (see the box we made)
-                                                      default_mat,        // Its material 
+                                                     box_mat,        // Its material 
                                                       "testBox");  // Its name
   
   /** Create the Physical Volume **/

@@ -1,3 +1,7 @@
+/* NEW FILE
+ * Here we need to control our output. Most of this file is to handle the 
+ * dosage output
+ */
 #include "RunAction.hh"
 #include "PrimaryGeneratorAction.hh"
 #include "Run.hh"
@@ -21,6 +25,7 @@ RunAction::RunAction()
   const G4double nanogray  = 1.e-9 * gray;
   const G4double picogray  = 1.e-12* gray;
 
+  // We really want units that are more easily read
   new G4UnitDefinition("milligray", "milliGy", "Dose", milligray);
   new G4UnitDefinition("microgray", "microGy", "Dose", microgray);
   new G4UnitDefinition("nanogray" , "nanoGy" , "Dose", nanogray);
@@ -53,6 +58,7 @@ void RunAction::EndOfRunAction(const G4Run* run)
     = static_cast<const PrimaryGeneratorAction*>
     (G4RunManager::GetRunManager() -> GetUserPrimaryGeneratorAction());
   G4String partName;
+  
   if (generatorAction)
   {
     G4ParticleDefinition* particle 

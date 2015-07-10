@@ -1,4 +1,6 @@
 /run/verbose 2
+/run/setCutForAGivenParticle gamma 0.5 m
+/cuts/setLowEdge 511 keV
 /run/initialize
 /control/execute vis.mac
 /vis/open OGL 900x900-0+0
@@ -26,5 +28,10 @@
 /vis/viewer/set/autoRefresh true
 /vis/viewer/refresh
 /vis/verbose warnings
+/gun/energy 1 GeV
 /run/beamOn 1
 /vis/scene/notifyHandlers scene-0
+/gun/energy 10 GeV
+/run/beamOn 1
+/run/beamOn 10
+/run/beamOn 100
