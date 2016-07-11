@@ -24,16 +24,19 @@ Suggested Install
 I install my version of geant into /opt. If you have separate root and home partitions you may want to check where you are installing to and make sure you have enough room.
 Follow the instruction document, but I use the following cmake command.
 
-```$ cmake -DCMAKE_INSTALL_PREFIX=/opt/geant4 -DGEANT4_BUILD_MULTITHREADED=ON -DGEANT4_INSTALL_DATADIR=/home/steven/Tools/geant4.10.00.p04/data -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_INSTALL_DATA=ON /home/steven/Tools/geant4.10.00.p04```
-
+```
+cmake -DCMAKE_INSTALL_PREFIX=/path/to/geant4-install_dir -DGEANT4_BUILD_MULTITHREADED=ON -DGEATN4_INSTALL_DATA=ON -DGEANT4_USE_GDML=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_RAYTRACER_X11=ON -DGEANT4_USE_QT=ON -DGEANT$_USE_OPENGL_X11=ON /path/to/geant4.10.version.number
+```
 I downloaded the extra data from the GEANT4 website and then placed it in tht data directory. You have to give the data flag to install that data and the location if you already downloaded it. I also turn on multithreading for faster operation and since I have opengl/X11 libraries I enabled that. 
 
 ```$ make -j6```
 
-This makes the build with 6 processors
+This makes the build with 6 processors, replace 6 with the number of processors you
+want to use (suggested max being 1 less than the number of threads you have)
 
 ```# make install```
 
-Use sudo for this. 
+Use sudo for this if you are installing to `/opt`, but you don't need sudo if you are 
+building into the home directory.
 
 Remember if you want to add additional D flags you can always remake the build. 
