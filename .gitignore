@@ -1,0 +1,9 @@
+*build
+*.swp
+*.swo
+*.aux
+*.log
+*.out
+*.o
+*.exe
+
