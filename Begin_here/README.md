@@ -1,13 +1,39 @@
 # First thing first
 ---
+First thing is that we need to have our source file set. You may notice in the install
+directory in the bin folder a file called `geant4.sh`. I suggest adding
+```
+source /path/to/geant4-install/bin/geant4.sh
+```
+to your bashrc file. There is also a file for c-shell if you prefer that. 
+
+Do note that Geant4 works best with these two shells, so if you are using something
+like z-shell do expect errors. It is best to just switch to bash when running Geant4
+programs.
+
+### Warning
+If you do not know much C or C++ you will have a hard time creating programs with Geant4.
+If you need to refresh then brush up on subjects like classes/structures, initialization
+lists, and pointers. The Geant4 toolbox is created around classes, so if you do not know
+how to use these and refer to objects within the class then you are going to have a
+difficult time. 
+
+You should also know some basics about cmake files and scripting. This will be less
+important because you should be able to lean pretty heavily on the ones within the 
+examples. 
+
+# Let's build an example
+---
 Once you have Geant4 installed this is the first place that you should start. Before 
 you start creating simulations it is important that we know how to build some of the
 examples. So first we want to find the example directory. This will be in your 
 geant4-install path/share/Geant4.version/examples/basic
 
 Once we are there make a new directory called `B1-build`, or whatever you want to call 
-it. Move into that directory then run
+it. So from the basic directory we will be running:
 ```
+mkdir B1-build
+cd B1-build
 cmake ../B1
 make -j6
 ./example1

@@ -1,7 +1,10 @@
 /***** The most basic main file ****/
+
+// Our required includes
 #include "G4RunManager.hh"
 #include "G4UImanager.hh"
 
+// Classes we will be pulling from for our construction
 #include "DetectorConstruction.hh"
 #include "PhysicsList.hh"
 #include "PrimaryGeneratorAction.hh"
@@ -38,17 +41,17 @@ int main()
   runManager -> BeamOn(numberOfEvents);
 
   // TERMINATE job
+  // Remember to always clean up. Any time we create something with new we should delete it
   delete runManager;
   //delete visManager; 
   return 0;
 }
-
-
-// NOTES
-// DETECTOR CONSTRUCTION specifies GEOMETRY, MATERIALS, SENSITIVE REGIONS, and READOUT schemes of sensitive regions
-// PARTICLE LIST (from G4VUserPhysicsList) requires user define PARTICLES being used, RANGE CUTS for particles, and ALL PHYSICS PROCESSES to be simulated
-//
-// GEANT does not check for mandatory classes till initialize() and BeamOn() are invoked 
-//
-// OPTIONAL USER CLASSES
-// UserRunAction, EventAction, StackingAction, TrackingAction, SteppingAction
+/*****************
+* DETECTOR CONSTRUCTION specifies GEOMETRY, MATERIALS, SENSITIVE REGIONS, and READOUT schemes of sensitive regions
+* PARTICLE LIST (from G4VUserPhysicsList) requires user define PARTICLES being used, RANGE CUTS for particles, and ALL PHYSICS PROCESSES to be simulated
+*
+* GEANT does not check for mandatory classes till initialize() and BeamOn() are invoked 
+*
+* OPTIONAL USER CLASSES
+* UserRunAction, EventAction, StackingAction, TrackingAction, SteppingAction
+******************/
