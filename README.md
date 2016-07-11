@@ -21,7 +21,8 @@ Install Guide
 
 Remember that if you would like to add more options (such as data, graphics libraries, or multithreading) you can just run the cmake in your build directory and add them. 
 
-Standard Options are located on page 17 of this document (section 2.3.1). Please read it
+Standard Options are located on [page 15](http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/fo/BookInstalGuide.pdf#page=15) of this document. 
+Please read it.
 
 Suggested Install
 ----------------------

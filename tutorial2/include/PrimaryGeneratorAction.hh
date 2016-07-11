@@ -2,7 +2,7 @@
 #ifndef PrimaryGeneratorAction_h
 #define PrimaryGeneratorAction_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh" //This is a Geant file, not created by user
+#include "G4VUserPrimaryGeneratorAction.hh" 
 
 class G4ParticleGun;
 class G4Event;
@@ -11,10 +11,10 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
   public:
     PrimaryGeneratorAction();
-    virtual ~PrimaryGeneratorAction();  // We must be able to destroy what we can create
+    virtual ~PrimaryGeneratorAction();  
 
   public:
-    virtual void GeneratePrimaries(G4Event*); // See .cpp file
+    virtual void GeneratePrimaries(G4Event*);
 
     const G4ParticleGun* GetParticleGun() const { return particleGun;}
     

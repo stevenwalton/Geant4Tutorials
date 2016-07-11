@@ -1,4 +1,4 @@
-# Tutorial 3: Making something happen (INCOMPLETE)
+# Tutorial 3: Counting dose through a flux field
 
 So running the last tutorial you will see that we just have a Geantino passing through the box. Now we want to use a different particle and get some interactions
 
@@ -14,17 +14,16 @@ Play around with the vis manager here's some things you should practice.
 
 - Change the gun energy
 ``` 
-  /gun/energy 10 GeV
+  /gun/energy 50 MeV
 ```
 - Change the gun particle
 ```
   /gun/particle e+
 ```
-If you type in an invalid particle you will get the full list of particles. It is also available in chapter 5.3
-http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/TrackingAndPhysics/particle.html
+If you type in an invalid particle you will get the full list of particles. 
+It is also available in [chapter 5.3](http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/TrackingAndPhysics/particle.html)
 - Change the viewing angle
 
 - Make the box empty and fire a gamma at the water target. What happens? 
 
 - Make both the box and the water a detector and see the different dosages each take.
-

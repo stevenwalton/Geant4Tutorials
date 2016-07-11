@@ -19,13 +19,14 @@ RunAction::RunAction()
   : G4UserRunAction()
 {
 
-  // We need the units for the dosages
+  // We need the units for the dosages since GEANT4 doesn't know what a gray is
   const G4double milligray = 1.e-3 * gray;
   const G4double microgray = 1.e-6 * gray;
   const G4double nanogray  = 1.e-9 * gray;
   const G4double picogray  = 1.e-12* gray;
 
   // We really want units that are more easily read
+  // We could just as easily use this to put our system in the furlong frikin fortnight system
   new G4UnitDefinition("milligray", "milliGy", "Dose", milligray);
   new G4UnitDefinition("microgray", "microGy", "Dose", microgray);
   new G4UnitDefinition("nanogray" , "nanoGy" , "Dose", nanogray);
@@ -92,4 +93,3 @@ void RunAction::EndOfRunAction(const G4Run* run)
          << G4endl
          << G4endl;
 }
-    

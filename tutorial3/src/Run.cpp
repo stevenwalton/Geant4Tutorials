@@ -33,7 +33,7 @@ void Run::RecordEvent(const G4Event* event)
   // We also want to pull the ID for the event
   G4int evtNb = event -> GetEventID();
 
-  // Every time an event ends we want to seperate it from new events. We make this clear with our output
+  // Every time an event ends we want to separate it from new events. We make this clear with our output
   if(evtNb%PrintModulo == 0)
   {
     G4cout << G4endl << "---> end of event: " << evtNb << G4endl;
@@ -51,7 +51,7 @@ void Run::RecordEvent(const G4Event* event)
 
   // Loop to map the events and add the dosages so that we get a total dose
   std::map<G4int,G4double*>::iterator i;
-  for (i = evtMap -> GetMap() -> begin(); i != evtMap -> GetMap() -> end(); i++)
+  for (i = evtMap -> GetMap() -> begin(); i != evtMap -> GetMap() -> end(); ++i)
   {
     dose = *(i -> second);
   }
@@ -68,4 +68,3 @@ void Run::Merge(const G4Run* aRun)
 
   G4Run::Merge(aRun);
 }
-

@@ -14,7 +14,7 @@
 /vis/drawVolume
 
 # Specify viewing angle
-/vis/viewer/set/viewpointThetaPhi 0. 0.
+/vis/viewer/set/viewpointThetaPhi 30. 120.
 # We're going to draw axes
 /vis/scene/add/axes 
 

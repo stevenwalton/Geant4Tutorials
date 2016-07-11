@@ -6,6 +6,7 @@
 
 class G4ParticleGun;
 class G4Event;
+class G4Box;
 
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
@@ -13,7 +14,6 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     PrimaryGeneratorAction();
     virtual ~PrimaryGeneratorAction();  // We must be able to destroy what we can create
 
-  public:
     virtual void GeneratePrimaries(G4Event*); // See .cpp file
 
     const G4ParticleGun* GetParticleGun() const { return particleGun;}
@@ -21,6 +21,7 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 
   private:
     G4ParticleGun* particleGun;
+    G4Box* EnvelopeBox;
 
 };
 

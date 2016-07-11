@@ -3,8 +3,8 @@
 # We're using OpenGL (See vis files in examples for other drivers such as OpenInventor, DAWN, HepRApp and others
 
 /vis/open OGL 900x900-0+0
-# I get a weird error with my VM and so I do this as a workaround
-/vis/ogl/set/displayListLimit 100000000000000
+# If you get an error when working in a VM a possible workaround is setting the display limit to an absurdly large number
+/vis/ogl/set/displayListLimit 100000
 
 # Disable auto refresh and quieten vis messages whilst scene and trajectories established
 /vis/viewer/set/autoRefresh false
@@ -20,7 +20,7 @@
 /vis/scene/add/trajectories smooth
 /vis/modeling/trajectories/create/drawByCharge
 /vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
-/vis/modeling/trajectories/drawByChage-0/default/setStepPtsSize 1
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 1
 
 # Select colour by particle ID
 /vis/modeling/trajectories/create/drawByParticleID
@@ -32,4 +32,3 @@
 # Re-establish auto refreshing and verbosity
 /vis/viewer/set/autoRefresh true
 /vis/verbose warnings
-
