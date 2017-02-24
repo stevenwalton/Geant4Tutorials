@@ -30,11 +30,12 @@ If you have separate root and home partitions you may want to check where you ar
 Follow the instruction document, but I use the following cmake command.
 
 ```
-cmake -DCMAKE_INSTALL_PREFIX=/path/to/geant4-install_dir -DGEANT4_BUILD_MULTITHREADED=ON -DGEATN4_INSTALL_DATA=ON -DGEANT4_USE_GDML=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_RAYTRACER_X11=ON -DGEANT4_USE_QT=ON -DGEANT$_USE_OPENGL_X11=ON /path/to/geant4.10.version.number
+cmake -DCMAKE_INSTALL_PREFIX=/path/to/geant4-install_dir -DGEANT4_BUILD_MULTITHREADED=ON -DGEATN4_INSTALL_DATA=ON -DGEANT4_USE_GDML=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_RAYTRACER_X11=ON -DGEANT4_USE_QT=ON -DGEANT4_USE_OPENGL_X11=ON /path/to/geant4.10.version.number
 ```
 I have had some bugs when building and pointing to where the installed data is, so I 
 suggest just letting Geant4 download the data for you.
-I also like using the QT visualization tools as it seems to work better with Ubuntu 16.
+I also like using the QT visualization tools as it seems to work better with Ubuntu 16. It also has the most capabilities compared to the other visualization tools. This is the only visualizer needed but
+if you install more you can always call them or ignore them.
 I found when building with the other visualizers that I would have problems, and the QT
 version allows you to move the camera without having to manually set it. This can save 
 some time if you need to view multiple angles. 
@@ -44,6 +45,7 @@ Next we continue with the make
 
 This makes the build with 6 processors, replace 6 with the number of processors you
 want to use (suggested max being 1 less than the number of threads you have)
+If you are having problems building I suggest dropping down to one processor and adding `VERBOSE=1`.
 
 ```# make install```
 
