@@ -1,0 +1,61 @@
+/run/verbose 2
+/run/initialize
+/control/execute vis.mac
+/vis/open OGL 900x900-0+0
+/vis/sceneHandler/create OGL
+/vis/viewer/create ! ! 900x900-0+0
+/vis/viewer/refresh
+/vis/ogl/set/displayListLimit 100000000000000
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world
+/vis/sceneHandler/attach
+/vis/viewer/set/viewpointThetaPhi 30. 120.
+/vis/scene/add/axes
+/vis/scene/notifyHandlers
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/scene/notifyHandlers scene-0
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/autoRefresh true
+/vis/viewer/refresh
+/vis/verbose warnings
+/control/execute gui.mac
+/control/execute icons.mac
+/gui/addIcon "Open macro" open /control/execute
+/gui/addIcon "Save viewer state" save /vis/viewer/save
+/gui/addIcon "Move" move
+/gui/addIcon "Pick" pick
+/gui/addIcon "Zoom Out" zoom_out
+/gui/addIcon "Zoom In" zoom_in
+/gui/addIcon "Rotate" rotate
+/gui/addIcon "Perspective" perspective
+/gui/addIcon "Orthogonal" ortho
+/gui/addMenu file File
+/gui/addButton file Quit exit
+/gui/addMenu run Run
+/gui/addButton run "beamOn 1" "/run/beamOn 1"
+/gui/addButton run "beamOn 100" "/run/beamOn 100"
+/gui/addMenu gun Gun
+/gui/addButton gun "e-" "/gun/particle e-"
+/gui/addButton gun "e+" "/gun/particle e+"
+/gui/addButton gun "proton" "/gun/particle proton"
+/gui/addButton gun "neutron" "/gun/particle neutron"
+/gui/addButton gun "alpha" "/gun/particle alpha"
+/gui/addButton gun "1MeV" "/gun/energy 1 MeV"
+/gui/addButton gun "10MeV" "/gun/energy 10 MeV"
+/gui/addButton gun "100MeV" "/gun/energy 100 MeV"
+/gui/addButton gun "1GeV" "/gun/energy 1 GeV"
+/gui/addIcon "Run Beam" user_icon "/run/beamOn 1" run.png
+/gui/addIcon "Run Beam x10" user_icon "run/beamOn 10" runx10.png
+/run/beamOn 1
+/vis/scene/notifyHandlers scene-0
+/run/beamOn 1
+/run/beamOn 1
+/run/beamOn 1

@@ -26,11 +26,7 @@ target_link_libraries(tutorial4 ${Geant4_LIBRARIES})
 
 # if you want to copy scripts over uncomment this section
  set(TUTORIAL_SCRIPTS
-#   tutorial.in
-#   tutorial.out
    init_vis.mac
-#   run1.mac
-#   run2.mac
    vis.mac
    gui.mac
    icons.mac

@@ -9,6 +9,7 @@
 #include "G4SystemOfUnits.hh"
 #include "G4SDManager.hh"
 #include "G4VPrimitiveScorer.hh"
+//#include "UserPrimitiveScorer.hh"
 #include "G4PSEnergyDeposit.hh"
 #include "G4PSDoseDeposit.hh"
 #include "G4SDParticleFilter.hh"
