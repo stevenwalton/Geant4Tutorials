@@ -18,8 +18,11 @@ class DetectorConstruction : public G4VUserDetectorConstruction
     virtual G4VPhysicalVolume* Construct();
     virtual void ConstructSDandField();
 
+    inline const G4VPhysicalVolume* GetAbsorberPV() const { return platePV;}
+
   private:
     void DefineMaterials();
     G4LogicalVolume* plate_log;
+    G4VPhysicalVolume* platePV;
 };
 #endif

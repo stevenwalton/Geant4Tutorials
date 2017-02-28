@@ -1,7 +1,0 @@
-/home/steven.walton@corp.gtlcompany.com/Programming/GitHub/Geant4Tutorials/tutorial4/CMakeFiles/install.dir
-/home/steven.walton@corp.gtlcompany.com/Programming/GitHub/Geant4Tutorials/tutorial4/CMakeFiles/list_install_components.dir
-/home/steven.walton@corp.gtlcompany.com/Programming/GitHub/Geant4Tutorials/tutorial4/CMakeFiles/rebuild_cache.dir
-/home/steven.walton@corp.gtlcompany.com/Programming/GitHub/Geant4Tutorials/tutorial4/CMakeFiles/tutorial4.dir
-/home/steven.walton@corp.gtlcompany.com/Programming/GitHub/Geant4Tutorials/tutorial4/CMakeFiles/install/strip.dir
-/home/steven.walton@corp.gtlcompany.com/Programming/GitHub/Geant4Tutorials/tutorial4/CMakeFiles/install/local.dir
-/home/steven.walton@corp.gtlcompany.com/Programming/GitHub/Geant4Tutorials/tutorial4/CMakeFiles/edit_cache.dir

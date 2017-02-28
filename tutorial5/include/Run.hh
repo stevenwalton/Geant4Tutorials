@@ -4,6 +4,10 @@
 #include "G4Run.hh"
 #include "globals.hh"
 #include "G4THitsMap.hh"
+#include "G4UserEventAction.hh"
+#include "EventAction.hh"
+
+class EventAction;
 
 class Run : public G4Run
 {
@@ -11,7 +15,7 @@ class Run : public G4Run
     Run();
     virtual ~Run();
 
-    virtual void RecordEvent(const G4Event*);
+    virtual void RecordEvent(const G4Event* event);
     virtual void Merge(const G4Run*);
 
     G4double GetSumDose() const {return SumDose;}
@@ -20,6 +24,8 @@ class Run : public G4Run
     G4double GetNElectrons() const  { return GetTotal(mapSum[0][1]); }
     G4double GetNPositrons() const  { return GetTotal(mapSum[0][2]); }
     G4double GetNNeutrons() const   { return GetTotal(mapSum[0][3]); }
+
+    G4double GetEffectiveDose() const { return effectiveDose; }
 
   private:
     G4int CollID_plate;
@@ -35,5 +41,8 @@ class Run : public G4Run
     G4THitsMap<G4double> mapSum[2][3];
     // Function defined in the class file
     G4double GetTotal(const G4THitsMap<G4double> &map) const;
+    G4double runEnergy;
+
+    G4double effectiveDose;
 };
 #endif

@@ -19,7 +19,8 @@
 
 
 DetectorConstruction::DetectorConstruction()
-  : G4VUserDetectorConstruction()
+  : G4VUserDetectorConstruction(),
+    platePV(0)
 {
   DefineMaterials();
 }
@@ -108,7 +109,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   /*G4LogicalVolume*/ plate_log = new G4LogicalVolume(plate,
                                                    water,
                                                    "plateLV");
-                                  new G4PVPlacement(0,
+                      platePV   = new G4PVPlacement(0,
                                                     G4ThreeVector(0.9 * worldSize,0,0),  // Remember that we have to account for the size of the box
                                                     plate_log,
                                                     "plate",

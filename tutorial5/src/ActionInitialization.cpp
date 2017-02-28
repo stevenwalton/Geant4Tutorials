@@ -6,8 +6,13 @@
 #include "RunAction.hh"
 #include "StackingAction.hh"
 
-ActionInitialization::ActionInitialization()
-  : G4VUserActionInitialization()
+#include "EventAction.hh"
+#include "DetectorConstruction.hh"
+#include "SteppingAction.hh"
+
+ActionInitialization::ActionInitialization(DetectorConstruction* detConst)
+  : G4VUserActionInitialization(),
+    fDetConst(detConst)
 {}
 
 ActionInitialization::~ActionInitialization()
@@ -22,6 +27,9 @@ void ActionInitialization::Build() const
 {
   SetUserAction(new PrimaryGeneratorAction);
   SetUserAction(new RunAction);
+  EventAction* event = new EventAction;
+  SetUserAction(event);
+  SetUserAction(new SteppingAction(fDetConst, event));
   SetUserAction(new StackingAction);
 }
 

@@ -15,9 +15,12 @@
 #include "G4ParticleTable.hh"
 #include "G4ParticleGun.hh"
 
+#include "SteppingAction.hh"
+
 RunAction::RunAction()
   : G4UserRunAction()
 {
+    G4RunManager::GetRunManager() -> SetPrintProgress(1);
 
   // We need the units for the dosages since GEANT4 doesn't know what a gray is
   const G4double milligray = 1.e-3 * gray;
@@ -82,7 +85,7 @@ void RunAction::EndOfRunAction(const G4Run* run)
     G4cout << G4endl
            << "--------------- End of Global Run --------------"
            << G4endl
-           << " The run was " << nofEvents << "events ";
+           << " The run was " << nofEvents << " events ";
   }
   else
   {
