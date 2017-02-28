@@ -65,7 +65,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
             fEvent -> addNeutDose(siv);
         }
         else
-            siv = -1. *(dose/gray);
+        {
+            siv = 0 *(dose/gray);
+            G4cout << "\nWARNING: WE DON'T HAVE WEIGHT FOR: " << particleName << G4endl;
+        }
 
         effectiveDose += siv;
         //G4cout << particleName << " hit with " << dose/gray << " Gy with effective dose: " << siv << " sieverts" << G4endl;
