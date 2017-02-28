@@ -1,0 +1,15 @@
+# This file adds icons to the gui
+# Save/open
+/gui/addIcon "Open macro" open /control/execute
+/gui/addIcon "Save viewer state" save /vis/viewer/save
+
+# Cursor icons
+/gui/addIcon "Move" move
+/gui/addIcon "Pick" pick
+/gui/addIcon "Zoom Out" zoom_out
+/gui/addIcon "Zoom In" zoom_in
+/gui/addIcon "Rotate" rotate
+
+# Perspectives
+/gui/addIcon "Perspective" perspective
+/gui/addIcon "Orthogonal" ortho
