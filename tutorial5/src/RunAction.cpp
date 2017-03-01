@@ -15,10 +15,9 @@
 #include "G4ParticleTable.hh"
 #include "G4ParticleGun.hh"
 
-#include "SteppingAction.hh"
-
 RunAction::RunAction()
-  : G4UserRunAction()
+  : G4UserRunAction(),
+    totalEffectiveDosage(0.)
 {
     G4RunManager::GetRunManager() -> SetPrintProgress(1);
 
@@ -50,6 +49,7 @@ void RunAction::BeginOfRunAction(const G4Run* run)
 
   // We need to inform the run manager to save the random number seed
   G4RunManager::GetRunManager() -> SetRandomNumberStore(false);
+  totalEffectiveDosage = 0.;
 }
 
 void RunAction::EndOfRunAction(const G4Run* run)
@@ -102,6 +102,7 @@ void RunAction::EndOfRunAction(const G4Run* run)
          << "Number of Electrons collected: " << nEl << G4endl
          << "Number of Positrons collected: " << nEp << G4endl
          << "Number of Neutrons collected: " << nN << G4endl
+         << "Total Effective Dose is: " << totalEffectiveDosage << " Sv" << G4endl
          << "--------------------------------------------------"
          << G4endl
          << G4endl;

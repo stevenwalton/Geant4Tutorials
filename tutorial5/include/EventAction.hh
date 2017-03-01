@@ -5,13 +5,15 @@
 #include "globals.hh"
 #include "G4HCofThisEvent.hh"
 
+class RunAction;
+
 class EventAction : public G4UserEventAction
 {
     public:
-        EventAction();
+        EventAction(RunAction*);
         virtual ~EventAction();
 
-        virtual void BeginOfEventAction(const G4Event* event);
+        virtual void BeginOfEventAction(const G4Event*);
         virtual void   EndOfEventAction(const G4Event* event);
 
         inline void AddEnergy(G4double edep) {totalEnergy += edep;}
@@ -26,17 +28,21 @@ class EventAction : public G4UserEventAction
         inline void addNeutDose(G4double nDose) { neutDose += nDose; }
         inline void addGammDose(G4double gDose) { gammaDose += gDose; }
 
+        inline G4double getEventEffectiveDose() { return effDose; }
+        G4double effDose;
+
 
     private:
         G4double totalEnergy;
         G4int fEventID;
         G4HCofThisEvent* fHCE;
-        G4double effDose;
+        //G4double effDose;
         G4double protDose;
         G4double betaDose;
         G4double alphDose;
         G4double neutDose;
         G4double gammaDose;
+        RunAction* fRunAction;
 };
 
 #endif

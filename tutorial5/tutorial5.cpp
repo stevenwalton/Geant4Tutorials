@@ -6,6 +6,7 @@
 #include "PhysicsList.hh"
 //#include "PrimaryGeneratorAction.hh"
 #include "ActionInitialization.hh"
+#include "EventAction.hh"
 
 int main(int argc, char** argv)
 {

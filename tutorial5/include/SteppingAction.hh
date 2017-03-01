@@ -21,6 +21,7 @@ class SteppingAction : public G4UserSteppingAction
         const DetectorConstruction* fDetConst;
         EventAction* fEvent;
         G4double effectiveDose;
+        G4double energy;
 
 };
 

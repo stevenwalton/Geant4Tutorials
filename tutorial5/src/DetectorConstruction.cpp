@@ -35,6 +35,7 @@ void DetectorConstruction::DefineMaterials()
   /* Define simple material */
   G4double density = 1.390 * g/cm3;
   G4double a = 39.95 * g/mole;
+  // Note this gives warning of "unused" even though it is
   G4Material* lAr = new G4Material("lArgon", // Name
                                     18.,          // Z value
                                     a,            // atomic mass

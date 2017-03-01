@@ -8,11 +8,14 @@
 #include "G4SDManager.hh"
 #include <cmath>
 
+#include "G4UnitsTable.hh"
+
 SteppingAction::SteppingAction(const DetectorConstruction* detConst, EventAction* event)
     : G4UserSteppingAction(),
       fDetConst(detConst),
       fEvent(event),
-      effectiveDose(0.)
+      effectiveDose(0.),
+      energy(0.)
 {}
 
 SteppingAction::~SteppingAction()
@@ -27,54 +30,51 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
     if ( volume == fDetConst -> GetAbsorberPV() )
     {
         G4double mass = (step -> GetPreStepPoint() -> GetTouchableHandle() -> GetVolume() -> GetLogicalVolume() -> GetMass())/kg;
-        G4double eng = step -> GetTotalEnergyDeposit();
-        G4double edep = (eng/eV) * ( 1.60218e-19 );
+        energy = step -> GetTotalEnergyDeposit();
+        fEvent -> AddEnergy(energy);
+        // We want to convert to Sieverts. Which is J/kg
+        G4double edep = (energy/MeV) * ( 1.60218e-13 ); // MeV = 1.602e-13 J
         G4double nonIon = step -> GetNonIonizingEnergyDeposit();
         G4double dose = (edep - nonIon) / mass;
         G4String particleName = step -> GetTrack() -> GetDynamicParticle() -> GetDefinition() -> GetParticleName();
-        G4double siv = 0.;
         if ( particleName == "gamma" || particleName == "e-" || particleName == "e+" )
         {
-            siv = dose/gray;
             if ( particleName == "gamma" )
-                fEvent -> addGammDose(siv);
+                fEvent -> addGammDose(dose);
             else
-                fEvent -> addBetaDose(siv);
+                fEvent -> addBetaDose(dose);
         }
         else if ( particleName == "proton" )
         {
-            siv = 2* (dose/gray);
-            fEvent -> addProtDose(siv);
+            dose *= 2.;
+            fEvent -> addProtDose(dose);
         }
         else if ( particleName == "alpha" /* or fission fragments */ )
         {
-            siv = 20 * (dose/gray);
-            fEvent -> addAlphDose(siv);
+            dose *= 20.;
+            fEvent -> addAlphDose(dose);
         }
         // Weights from ICRP 103
         else if ( particleName == "neutron" )
         {
             G4double weight = 0.;
-            if ( eng < 1*MeV )
-                weight = 2.5 + (18.2*exp(-1 * pow(log(eng/MeV),2)/6));
-            else if ( eng < 50 * MeV )
-                weight = 5.0 + (17.0 * exp(-1 * pow(log(2*eng/MeV),2)/6));
+            if ( energy < 1*MeV )
+                weight = 2.5 + (18.2*exp(-1 * pow(log(energy),2)/6));
+            else if ( energy< 50 * MeV )
+                weight = 5.0 + (17.0 * exp(-1 * pow(log(2*energy),2)/6));
             else // E_n > 50 MeV
-                weight = 2.5 + (3.25 * exp(-1 * pow(log(0.04*eng/MeV),2)/6));
-            siv = weight * (dose/gray);
-            fEvent -> addNeutDose(siv);
+                weight = 2.5 + (3.25 * exp(-1 * pow(log(0.04*energy),2)/6));
+            dose *= weight;
+            fEvent -> addNeutDose(dose);
         }
         else
         {
-            siv = 0 *(dose/gray);
+            dose *= 0.;
             G4cout << "\nWARNING: WE DON'T HAVE WEIGHT FOR: " << particleName << G4endl;
         }
 
-        effectiveDose += siv;
-        //G4cout << particleName << " hit with " << dose/gray << " Gy with effective dose: " << siv << " sieverts" << G4endl;
-        //G4cout << particleName << ": " << dose/gray << " Gy " << eng/MeV << " MeV " << siv << " Sv" << G4endl;
-        //G4cout << "EffectiveDose: " << effectiveDose << G4endl;
-        fEvent -> addEffectiveDose(effectiveDose);
+        effectiveDose += dose;
+        fEvent -> addEffectiveDose(dose);
     }
     
 }

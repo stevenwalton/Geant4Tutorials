@@ -23,8 +23,7 @@ Run::Run()
     nPositron_ID(-1),
     nNeutron_ID(-1),
     PrintModulo(10000),
-    SumDose(0.),
-    runEnergy(0.)
+    SumDose(0.)
 {
 }
 
@@ -32,8 +31,7 @@ Run::~Run()
 {
 }
 
-//void Run::RecordEvent(const G4Event* event)
-void Run::RecordEvent(const G4Event* event)
+void Run::RecordEvent(const G4Event* event)//, EventAction* fEvent)
 {
   // Note how this relates to the condition above. We now can find the ID of the dose the plate gets
   if (CollID_plate < 0) 
@@ -53,7 +51,7 @@ void Run::RecordEvent(const G4Event* event)
   // Every time an event ends we want to separate it from new events. We make this clear with our output
   if(evtNb%PrintModulo == 0)
   {
-    G4cout << G4endl << "---> end of event: " << evtNb << G4endl;
+    G4cout << G4endl << "---> end of events: " << evtNb << G4endl;
   }
 
   // Collections of Hits
@@ -80,9 +78,6 @@ void Run::RecordEvent(const G4Event* event)
   mapSum[0][2] += *evtMap; // Adds the positrons
   evtMap = (G4THitsMap<G4double>*)(HCE -> GetHC(nNeutron_ID));
   mapSum[0][3] += *evtMap; // Adds Neutrons
-  
-  //runEnergy += event -> GetTotalEnergy();
-
 
   G4Run::RecordEvent(event); // invoke base class method
 }
@@ -108,7 +103,6 @@ void Run::Merge(const G4Run* aRun)
   mapSum[0][1] += localRun -> mapSum[0][1]; // Electrons
   mapSum[0][2] += localRun -> mapSum[0][2]; // Positrons
   mapSum[0][3] += localRun -> mapSum[0][3]; // Neutrons
-  //runEnergy += localRun -> runEnergy;
 
   G4Run::Merge(aRun);
 }
