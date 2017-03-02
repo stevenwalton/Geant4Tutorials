@@ -27,4 +27,4 @@
 
 # Adding a run button
 /gui/addIcon "Run Beam" user_icon "/run/beamOn 1" run.png # photo from geant4 slac handson tutorials
-/gui/addIcon "Run Beam x10" user_icon "run/beamOn 10" runx10.png
+/gui/addIcon "Run Beam x10" user_icon "/run/beamOn 10" runx10.png
