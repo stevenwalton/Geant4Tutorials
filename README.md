@@ -53,3 +53,9 @@ Use sudo for this if you are installing to `/opt`, but you don't need sudo if yo
 building into the home directory.
 
 Remember if you want to add additional D flags you can always remake the build. 
+
+Packages Needed
+--------------------
+From a base Ubuntu 16.04 version you will need
+- libxerces-c-dev
+- libxmu-dev

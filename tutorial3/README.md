@@ -27,3 +27,7 @@ It is also available in [chapter 5.3](http://geant4.cern.ch/G4UsersDocuments/Use
 - Make the box empty and fire a gamma at the water target. What happens? 
 
 - Make both the box and the water a detector and see the different dosages each take.
+
+WARNING
+-----------
+Right now Geant4 seems to have some errors with this program and Qt. If you are getting a segfault when running beamOn then try switching the visualization while I work this problem out. Will be the same for tutorial4 too

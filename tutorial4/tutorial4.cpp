@@ -9,20 +9,24 @@
 
 int main(int argc, char** argv)
 {
-  G4RunManager* runManager = new G4RunManager;
+  //G4RunManager* runManager = new G4RunManager;
 
   G4UIExecutive* ui = new G4UIExecutive(argc, argv);
-  G4VisManager* visManager = new G4VisExecutive;
-  visManager -> Initialize();
+  //G4VisManager* visManager = new G4VisExecutive;
+  //visManager -> Initialize();
+  auto runManager = new G4RunManager;
 
   runManager -> SetUserInitialization(new DetectorConstruction);
   runManager -> SetUserInitialization(new PhysicsList);
   runManager -> SetUserInitialization(new ActionInitialization());
 
-  runManager -> Initialize();
+  //runManager -> Initialize();
+  auto visManager = new G4VisExecutive;
+  visManager -> Initialize();
   
   // get pointer to UI manager and set verbosities
-  G4UImanager* UI = G4UImanager::GetUIpointer();
+  //G4UImanager* UI = G4UImanager::GetUIpointer();
+  auto UI = G4UImanager::GetUIpointer();
   UI -> ApplyCommand("/control/execute init_vis.mac");
   // Have to add this to get the gui command
   UI -> ApplyCommand("/control/execute gui.mac");
