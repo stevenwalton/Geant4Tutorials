@@ -7,6 +7,8 @@
 //#include "PrimaryGeneratorAction.hh"
 #include "ActionInitialization.hh"
 
+#include "G4UIcommand.hh"
+
 int main(int argc, char** argv)
 {
   G4RunManager* runManager = new G4RunManager;
