@@ -77,14 +77,14 @@ void RunAction::EndOfRunAction(const G4Run* run)
     G4cout << G4endl
            << "--------------- End of Global Run --------------"
            << G4endl
-           << " The run was " << nofEvents << "events ";
+           << "The run was " << nofEvents << " event(s) ";
   }
   else
   {
     G4cout << G4endl
            << "--------------- End of Local Run ---------------"
            << G4endl
-           << " The run was " << nofEvents << " " << partName;
+           << "The run was " << nofEvents << " " << partName;
   }
   G4cout << G4endl
          << "Total dose to the plate : " << G4BestUnit(sumDose, "Dose") 

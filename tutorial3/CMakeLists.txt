@@ -11,6 +11,10 @@ if(WITH_GEANT4_UIVIS)
 else()
   find_package(Geant4 REQUIRED)
 endif()
+option(ui_all ON)
+option(vis_all ON)
+MESSAGE( STATUS "Geant4_qt_FOUND: " ${Geant4_qt_FOUND} )
+MESSAGE( STATUS "Geant4_vis_opengl_x11_FOUND: " ${Geant4_vis_opengl_x11_FOUND} )
 
 # Setup include directories
 include(${Geant4_USE_FILE})
@@ -26,11 +30,8 @@ target_link_libraries(tutorial3 ${Geant4_LIBRARIES})
 
 # if you want to copy scripts over uncomment this section
  set(TUTORIAL_SCRIPTS
-#   tutorial.in
-#   tutorial.out
    init_vis.mac
-#   run1.mac
-#   run2.mac
+   run.mac
    vis.mac
    )
 # 

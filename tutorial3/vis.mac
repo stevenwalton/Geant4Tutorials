@@ -2,7 +2,8 @@
 
 # We're using OpenGL (See vis files in examples for other drivers such as OpenInventor, DAWN, HepRApp and others
 
-/vis/open OGL 600x600-0+0
+/vis/open OGL #600x600-0+0
+#/vis/open OIX
 # I get a weird error with my VM and so I do this as a workaround
 #/vis/ogl/set/displayListLimit 10000
 

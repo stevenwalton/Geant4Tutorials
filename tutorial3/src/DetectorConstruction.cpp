@@ -16,6 +16,8 @@
 #include "G4PSEnergyDeposit.hh"
 #include "G4PSDoseDeposit.hh"
 
+#include "G4VisAttributes.hh"
+
 
 DetectorConstruction::DetectorConstruction()
   : G4VUserDetectorConstruction()
@@ -83,16 +85,16 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   
   G4LogicalVolume* testBox_log = new G4LogicalVolume(testBox,         // Its solid (see the box we made)
                                                      box_mat,        // Its material 
-                                                      "testBox");  // Its name
+                                                     "testBox");  // Its name
   
                                   // We can place this as part of the G4Logical Volume
                                  new G4PVPlacement(0,                 // Rotation
-                                                     G4ThreeVector(),   // its location
-                                                     testBox_log,       // the logical volume
-                                                     "testBox",            // its name
-                                                     logicWorld,        // its mother volume 
-                                                     false,             // boolean operations
-                                                     0);                // its copy number
+                                                   G4ThreeVector(),   // its location
+                                                   testBox_log,       // the logical volume
+                                                   "testBox",            // its name
+                                                   logicWorld,        // its mother volume 
+                                                   false,             // boolean operations
+                                                   0);                // its copy number
 
 
 
@@ -100,20 +102,20 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
    * it will be located at the lowest value of x in our world. Remember that our particle gun was defined at 1.,0,0
    * */
   G4Box* plate = new G4Box("plate",
-                              0.1 * m,
-                              worldSize,
-                              worldSize);
+                           0.1 * m,
+                           worldSize,
+                           worldSize);
 
   G4LogicalVolume* plate_log = new G4LogicalVolume(plate,
                                                    water,
                                                    "plateLV");
-                                  new G4PVPlacement(0,
-                                                    G4ThreeVector(0.9 * worldSize,0,0),  // Remember that we have to account for the size of the box
-                                                    plate_log,
-                                                    "plate",
-                                                    logicWorld,
-                                                    false,
-                                                    0);
+                               new G4PVPlacement(0,
+                                                 G4ThreeVector(0.9 * worldSize,0,0),  // Remember that we have to account for the size of the box
+                                                 plate_log,
+                                                 "plate",
+                                                 logicWorld,
+                                                 false,
+                                                 0);
 
       
   return physWorld; // Always return the world 
@@ -125,9 +127,10 @@ void DetectorConstruction::ConstructSDandField()
 {
   G4SDManager::GetSDMpointer() -> SetVerboseLevel(1);
   
-  G4MultiFunctionalDetector* plate = new G4MultiFunctionalDetector("plate");
+  G4MultiFunctionalDetector* det = new G4MultiFunctionalDetector("plate");
+  G4SDManager::GetSDMpointer() -> AddNewDetector(det);
   G4VPrimitiveScorer* prim = new G4PSDoseDeposit("dose");   // We want to record the dosage to the patient
-  plate -> RegisterPrimitive(prim);
-  SetSensitiveDetector("plateLV", plate);
+  det -> RegisterPrimitive(prim);
+  SetSensitiveDetector("plateLV", det);
 }
 

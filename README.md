@@ -1,5 +1,6 @@
 # Geant4Tutorials
-============================
+----------------------------
+
 Geant4 tutorials made by Steven Walton:
 
 We will go through tutorials and build our first Geant4 application, step by step

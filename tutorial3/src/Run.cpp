@@ -10,6 +10,7 @@
 #include "G4THitsMap.hh"
 #include "G4SystemOfUnits.hh"
 
+
 /* We want to set up the event with these parameters. Very important to set the Sum Dosage so that we don't stack the values from 
  * random points in memory */
 Run::Run()

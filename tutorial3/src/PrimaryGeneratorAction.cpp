@@ -19,6 +19,7 @@
 #include "G4LogicalVolume.hh"
 #include "G4Box.hh"
 #include "Randomize.hh"
+#include "G4Geantino.hh"
 
 PrimaryGeneratorAction::PrimaryGeneratorAction()
   : G4VUserPrimaryGeneratorAction(),
@@ -29,11 +30,13 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   particleGun = new G4ParticleGun(n_particle); 
 
   // Here we'll load the whole particle table to be able to call a lookup
-  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
-  G4String particleName;
-  G4ParticleDefinition* particle = particleTable -> FindParticle(particleName="gamma");
+  //G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+  //G4String particleName;
+  //G4ParticleDefinition* particle = particleTable -> FindParticle(particleName="gamma");
+  //G4ParticleDefinition* particle = particleTable -> FindParticle(particleName="geantino");
+  particleGun -> SetParticleDefinition(G4Geantino::GeantinoDefinition());
 
-  particleGun -> SetParticleDefinition(particle); 
+  //particleGun -> SetParticleDefinition(particle); 
   particleGun -> SetParticleEnergy(6.0 * MeV);  
 
   //particleGun -> SetParticlePosition(G4ThreeVector(-1.*m, 0.*m, 0.*m)); 
