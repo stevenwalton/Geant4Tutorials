@@ -11,6 +11,7 @@
 int main(int argc, char** argv)
 {
   G4UIExecutive* ui = 0;
+  // Run a macro if one is given
   if( argc == 1 )
       ui = new G4UIExecutive(argc,argv);
 

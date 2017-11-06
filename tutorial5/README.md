@@ -1,4 +1,5 @@
 # Changes in Tutorial 5
+------------------------
 This time we had the goal to get the Effective Dosages in the detector. If we reference 
 ICRP 103 we can find the weights that each particle has, specifically neutrons are a problem.
 Unfortunately the dosage detector we've been using does not account for the weights of the 
@@ -42,3 +43,17 @@ check that we did this all correctly we'll switch the gun to fire protons and up
 secondaries and that effective dosage is twice that of the total deposited dosage. We have again
 verified that we did things correctly (and that total dosage doesn't account for weight) because
 protons have a weight of 2. 
+
+## Minor Changes made
+---------------------
+We included the options to run multiple macros at once. Try this out by running
+
+`./tutorial5 run1.mac run2.mac`
+
+You will notice that the output becomes cumbersome. I left the output to illustrate this point and let the reader
+experiment with multithreaded options in this configuration (See Example B3's main file). 
+
+We also moved the material definition outside of the DetectorContruction file. You can also do this as a class,
+but it is simple to do as a standard header file. If you have a more complex geometry and material list this
+will be suggested as it makes reading the code easier. Remember, GEANT4 is just C++, so we can do anything that we
+normally would do there here. 

@@ -9,7 +9,6 @@
 #include "G4SystemOfUnits.hh"
 #include "G4SDManager.hh"
 #include "G4VPrimitiveScorer.hh"
-//#include "UserPrimitiveScorer.hh"
 #include "G4PSEnergyDeposit.hh"
 #include "G4PSDoseDeposit.hh"
 #include "G4SDParticleFilter.hh"
@@ -17,6 +16,7 @@
 #include "G4PSNofSecondary.hh"
 #include "G4VSDFilter.hh"
 
+#include "Materials.hh"
 
 DetectorConstruction::DetectorConstruction()
   : G4VUserDetectorConstruction(),
@@ -27,38 +27,6 @@ DetectorConstruction::DetectorConstruction()
 
 DetectorConstruction::~DetectorConstruction()
 {} 
-
-void DetectorConstruction::DefineMaterials()
-{
-  G4NistManager* man = G4NistManager::Instance();
-  G4bool isotopes = false;
-  /* Define simple material */
-  G4double density = 1.390 * g/cm3;
-  G4double a = 39.95 * g/mole;
-  // Note this gives warning of "unused" even though it is
-  G4Material* lAr = new G4Material("lArgon", // Name
-                                    18.,          // Z value
-                                    a,            // atomic mass
-                                    density);     // That thing
-  
-  /* Define a simple molecule */
-  G4Element* H = man -> FindOrBuildElement("H", isotopes); 
-  G4Element* O = man -> FindOrBuildElement("O", isotopes);
-  
-  G4Material* H2O = new G4Material("Water",         // name
-                                    1.000 * g/cm3,  // density
-                                    2);             // number of components
-  H2O -> AddElement(H, 2);  // Name and number of atoms in molecule
-  H2O -> AddElement(O, 1);
-  
-  /* Define mixture by fractional mass */
-  G4Element* N = man -> FindOrBuildElement("N", isotopes);
-  density = 1.290 * mg/cm3;
-  G4Material* Air = new G4Material("Air", density, 2);
-  Air -> AddElement(N, 70*perCent);
-  Air -> AddElement(O, 30*perCent);
-}
-
 
 // Create our world and box
 G4VPhysicalVolume* DetectorConstruction::Construct()

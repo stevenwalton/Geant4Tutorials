@@ -21,7 +21,6 @@ class DetectorConstruction : public G4VUserDetectorConstruction
     inline const G4VPhysicalVolume* GetAbsorberPV() const { return platePV;}
 
   private:
-    void DefineMaterials();
     G4LogicalVolume* plate_log;
     G4VPhysicalVolume* platePV;
 };
