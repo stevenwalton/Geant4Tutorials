@@ -131,6 +131,7 @@ void DetectorConstruction::ConstructSDandField()
     G4String filterName, particleName;
     // Changed name to detector to be clearer
     G4MultiFunctionalDetector* det = new G4MultiFunctionalDetector("plate");
+    sdManage -> AddNewDetector(det);
     G4VPrimitiveScorer* prim;
     prim = new G4PSDoseDeposit("dose");   // We want to record the dosage to the patient
     det -> RegisterPrimitive(prim);

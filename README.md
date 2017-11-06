@@ -60,3 +60,13 @@ Packages Needed
 From a base Ubuntu 16.04 version you will need
 - libxerces-c-dev
 - libxmu-dev
+
+Ubuntu on Windows
+-------------------
+I've also done some testing on Ubuntu on Windows. All these tutorials have been verified to work on XMing server and Xmanager5.
+
+If you are trying to visualize runs (such as these tutorials)
+
+- Xmanager5 seems to work the best. There are a few glitches but nothing major. Note: I have not pushed the system.
+
+- XMing server works fine, but is glitchy. If you do not rotate your view the particles jump around while the run is happening. It looks normal when the run completes. When you try to rotate the view, XMing does not refresh at an acceptable rate, and will stutter. If you just care about the final view, XMing will work great (and it is free).
