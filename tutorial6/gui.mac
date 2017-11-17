@@ -1,0 +1,30 @@
+# Adding a GUI interface for ease of use
+# This allows us to add toolbars and buttons that can run custom commands. Thanks to QT
+
+/control/execute icons.mac # Where we store the icons
+
+# File menu
+/gui/addMenu file File
+/gui/addButton file Quit exit # Adds "Quit" under file menu that runs "exit" command
+
+# Run menu
+/gui/addMenu run Run
+# If above didn't make sense this pattern should
+/gui/addButton run "beamOn 1" "/run/beamOn 1"
+/gui/addButton run "beamOn 100" "/run/beamOn 100"
+
+# Gun Menu
+/gui/addMenu gun Gun
+/gui/addButton gun "e-" "/gun/particle e-"
+/gui/addButton gun "e+" "/gun/particle e+"
+/gui/addButton gun "proton" "/gun/particle proton"
+/gui/addButton gun "neutron" "/gun/particle neutron"
+/gui/addButton gun "alpha" "/gun/particle alpha"
+/gui/addButton gun "1MeV" "/gun/energy 1 MeV"
+/gui/addButton gun "10MeV" "/gun/energy 10 MeV"
+/gui/addButton gun "100MeV" "/gun/energy 100 MeV"
+/gui/addButton gun "1GeV" "/gun/energy 1 GeV"
+
+# Adding a run button
+/gui/addIcon "Run Beam" user_icon "/run/beamOn 1" run.png # photo from geant4 slac handson tutorials
+/gui/addIcon "Run Beam x10" user_icon "/run/beamOn 10" runx10.png
